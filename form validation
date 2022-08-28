@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <script>
+        function validate_form()
+        {
+            var v;
+            v=document.getElementById("1").value;
+            if(v=="")
+            {
+                window.alert("User Id is a required Field");
+            }
+           else if(v.length<5||v.length>12)
+            {
+                window.alert("Id should be between 5-12 characters\n");
+            }
+            var x;
+            x=document.getElementById("2").value;
+            var i;
+            var flag=0;
+            if(x=="")
+            {
+                window.alert("Name is a required field!")
+            }
+            else
+           {
+            for(i=0;i<x.length;i++)
+            {   
+                
+                if(x[i]>='a'&&x[i]<='z')
+                {
+                    flag=1
+                }
+                else if(x[i]>='A'&&x[i]<='Z')
+                {
+                    flag=1;
+                }
+                else
+                {
+                    flag=0;
+                    break;
+                }
+            }
+            if(flag==0)
+            {
+                window.alert("Name must comprise of only alphabets")
+            }
+        }
+            var s;
+            s=myform.Country.value;
+            if(s=="None")
+            {
+                window.alert("Country Name is required!")
+            }
+            var g;
+            g=myform.Gender.value;
+            if(g=="")
+            {
+                window.alert("Gender is a required field!")
+            }
+            var l;
+            l=myform.lang.value;
+           
+            if(l=="1"||l=="2")
+            {
+               
+            }
+           else
+           {
+            window.alert("Language is a required field!")
+           }
+        }
+    </script>
+</head>
+<body>
+   <h1>Registration Form</h1> 
+   <br>
+   <form name="myform" action="#" method="post" >
+    User Id: <input type="text" name="User_id" id="1">
+    
+    <br>
+    <br>
+    Name:<input type="text" name="Name" id="2">
+    <br>
+    <br>
+    Country:
+    <select name="Country">
+        <option value="None">Please select a Country</option>
+        <option value="India">India</option>
+        <option value="US">United States</option>
+        <option value="Canada">Canada</option>
+        <option value="Germany">Germany</option>
+    </select>
+    <br>
+    <br>
+    Email:
+    <input type="email" required>
+    
+    <br>
+    <br>
+    Sex:
+    <input type="radio" name="Gender">Male
+    <input type="radio" name="Gender">Female
+    <br>
+    <br>
+    Language:
+    <input type="checkbox"name="lang" value="1">English
+    <input type="checkbox"name="lang" value="2">Non English
+    <br>
+    <br>
+    <label>About:</label>
+    <br>
+    <textarea cols="30"rows="10"></textarea>
+    <br>
+    <br>
+    <input type="submit" value="submit" onclick="validate_form()" style="text-emphasis: bold;">
+
+   
+
+   </form>
+</body>
+</html>
